@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="{% static 'css/quiz.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" >
+
+    <title>Document</title>
+    
+    <title>
+
+        {% block title %}
+
+          DecryptHer
+
+        {% endblock %}
+
+    </title>
+</head>
+<body>
+    <section class="nav-bar">
+        <div class="nav-container">
+           
+            <nav  >
+                <div class="nav-left">
+                     <span>
+                    <img src={%static " " %} alt="logo">
+                    <span class="brand-logo">Balanced_Me</span>
+                    </span>
+                </div>
+                <div class="nav-list nav-right">                    
+                    <span>
+                        <a href="{% url 'index' %}">Home</a>
+                    </span>
+                    {% if user.is_authenticated %}
+                    
+                    <span>
+                        <a href="#">News</a>
+                       
+                    </span>
+                    <span>
+                        <a href="#">Quiz</a>
+                    </span>
+                    <span>
+                        <a href="#">CryptoBot</a>
+                    </span>
+                   
+                    
+                    <span>
+                        <a href="{% url 'AppLogin:profile' %}">{{ user.username }}</a>
+                    </span>
+
+                    <span>
+                        <a href="{% url 'AppLogin:logout' %}">Logout</a>
+                    </span>
+                    {% else %}
+                    <span>
+                        <a href="{% url 'AppLogin:signup' %}">Sign Up</a>
+                    </span>
+                    <span>
+                        <a href="{% url 'AppLogin:signin' %}">Login</a>
+                    </span>
+
+                    {% endif %}
+
+
+                </div>
+
+            </nav>
+        </div>
+    </section>
+
+    <div class="containermain">
+    
+     {% comment %} {% include "./Home/navbar.html" %} {% endcomment %}
+
+        <div class="main pt-2">
+
+            {% block body_block %}
+
+            {% endblock %}
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+<script>
+    (function ($) {
+        $(function () {
+            $('nav ul li a:not(:only-child)').click(function (e) {
+                $(this).siblings('.nav-dropdown').toggle();
+                $('.dropdown').not($(this).siblings()).hide();
+                e.stopPropagation();
+            });
+            $('html').click(function () {
+                $('.nav-dropdown').hide();
+            });
+            $('#nav-toggle').click(function () {
+                $('nav ul').slideToggle();
+            });
+            $('#nav-toggle').on('click', function () {
+                this.classList.toggle('active');
+            });
+        });
+    })(jQuery);
+
+</script>
+</body>
+
+    </html>
+  
