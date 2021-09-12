@@ -13,7 +13,7 @@
      <link rel="stylesheet" href="{% static 'css/quiz.css' %}" >
     <link rel="stylesheet" href="{% static 'css/home.css' %}" >
 
-    <title>Document</title>
+    <title>Balanced_Me</title>
     
     <title>
 
@@ -43,16 +43,14 @@
                     {% if user.is_authenticated %}
                     
                     <span>
-                        <a href="#">News</a>
+                        <a href="{% url 'Home:personal'%}">Personal Life</a>
                        
                     </span>
                     <span>
-                        <a href="#">Quiz</a>
+                        <a href="{% url 'Home:productivity'%}">Productivity</a>
+                       
                     </span>
-                    <span>
-                        <a href="#">CryptoBot</a>
-                    </span>
-                   
+                    
                     
                     <span>
                         <a href="{% url 'AppLogin:profile' %}">{{ user.username }}</a>
@@ -68,6 +66,8 @@
                     <span>
                         <a href="{% url 'AppLogin:signin' %}">Login</a>
                     </span>
+                    
+
 
                     {% endif %}
 
@@ -90,6 +90,17 @@
 
         </div>
     </div>
+    <footer style="    width: 87.75rem;
+    margin-top: 2rem;
+    height: 14rem;
+    background: #a72c83;
+    display: flex;
+    justify-content: center;">
+        <span style="font-size: 4rem;
+        color: white;
+    ">Balanced_Me</span>
+
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>

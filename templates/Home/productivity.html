@@ -1,0 +1,38 @@
+{% extends 'Base.html' %}
+
+
+{% load static %}
+{% block title %} Personal Life {% endblock title %}
+
+{% block body_block %}
+
+<h2  style="margin: 2rem;
+font-size: 3rem;
+color: #7f23c0;">Be the most efficient woman in the world...</h2>
+<div class="all" style="display: flex; justify-content: center;
+align-items: center;">
+    <div class="proim">
+        <img src="//s3.amazonaws.com/appforest_uf/f1631378740537x120535507421895000/Screen%20Shot%202021-09-11%20at%2012.45.22%20PM.png" style="width: 34rem;" alt="">
+       
+       
+    </div>
+    <div class="buttonpro" style=" box-shadow: 0 0 5px 2px rgb(0 0 0 / 50%);
+    padding: 2rem;
+    border-radius: 12px;
+    background:#D09BB5;
+    margin-left: 4rem;"
+    >
+        <button>How do you feel about your PRODUCTIVITY?</button>
+       
+        <div class="choosepro" style="display: flex; flex-direction: column; ">
+            <input type="checkbox">Not at all...
+            <input type="checkbox">Slightly...(from 10% to 40%)
+            <input type="checkbox">Decent...(from 50% to 60%)
+            <input type="checkbox">Pretty much productive...(from 70% to 80%)
+            <input type="checkbox">Extremely productive...(from 90% to 100%)
+        </div>
+    </div>
+
+</div>
+
+{% endblock body_block %}
