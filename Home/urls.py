@@ -6,6 +6,6 @@ app_name = 'Home'
 urlpatterns =[
     path('',views.index,name='home'),
     path('personal',views.personal,name="personal"),
-    path('productivity',views.personal,name="productivity"),
+    path('productivity',views.productivity,name="productivity"),
     
 ]
