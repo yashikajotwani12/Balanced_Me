@@ -9,5 +9,5 @@ class home(ListView):
     template_name='Home/home.html'
 def personal(request):
     return render(request,'Home/personal.html')
-def personal(request):
+def productivity(request):
     return render(request,'Home/productivity.html')
